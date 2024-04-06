@@ -1,81 +1,66 @@
-# Teste prático para Back-End 
-***
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-Bem-vindo.
+<p align="center">
+<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
-Este é personalizado, usarei para avaliar tecnicamente todas as pessoas que estão participando do nosso processo seletivo para a vaga de desenvolvimento Back-End, lembrando que a aplicação de patterns como service e repository e processamento de filas asyncronas com horizon fazem diferença comente o seu código para facilitar a revisão o prazo de execução é de 3 dias corridos a partir do momento que o teste foi encaminhado para você, se tiver alguma duvida pergunte.
+## About Laravel
 
-## TL;DR
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- Você deverá criar um CRUD através de uma API REST com Laravel;
-- Você deverá criar um comando artisan que se comunicará com uma outra API para importar em seu banco de dados;
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-## Começando
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-**Faça um fork desse projeto para iniciar o desenvolvimento. PRs não serão aceitos.**
+## Learning Laravel
 
-### Configuração do ambiente
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-**Setup laravel conforme a documentação pode usar qualquer opção usando 'Valet, artisan serve ou docker'.**
+You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-### Funcionalidades a serem implementadas
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-**Essa aplicação deverá se comportar como uma API REST, onde será consumida por outros sistemas. Nesse teste você deverá se preocupar em constriuir somente a API**. 
+## Laravel Sponsors
 
-##### CRUD produtos
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-Aqui você deverá desenvolver as principais operações para o gerenciamento de um catálogo de produtos, sendo elas:
+### Premium Partners
 
-- Criação
-- Atualização
-- Exclusão
+- **[Vehikl](https://vehikl.com/)**
+- **[Tighten Co.](https://tighten.co)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Cubet Techno Labs](https://cubettech.com)**
+- **[Cyber-Duck](https://cyber-duck.co.uk)**
+- **[Many](https://www.many.co.uk)**
+- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
+- **[DevSquad](https://devsquad.com)**
+- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
+- **[OP.GG](https://op.gg)**
+- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
+- **[Lendio](https://lendio.com)**
 
-O produto deve ter a seguinte estrutura:
+## Contributing
 
-Campo       | Tipo      | Obrigatório   | Pode se repetir
------------ | :------:  | :------:      | :------:
-id          | int       | true          | false
-name        | string    | true          | false        
-price       | float     | true          | true
-decription  | text      | true          | true
-category    | string    | true          | true
-image_url   | url       | false         | true
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-Os endpoints de criação e atualização devem seguir o seguinte formato de payload:
+## Code of Conduct
 
-```json
-{
-    "name": "product name",
-    "price": 109.95,
-    "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
-    "category": "test",
-    "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-}
-```
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-**Importante:** Tanto os endpoints de criação é atualização, deverão ter uma camada de validação dos campos.
+## Security Vulnerabilities
 
-##### Buscas de produtos
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-Para realizar a manutenção de um catálogo de produtos é necessário que o sistema tenha algumas buscas, sendo elas:
+## License
 
-- Busca pelos campos `name` e `category` (trazer resultados que batem com ambos os campos).
-- Busca por uma categoria específica.
-- Busca de produtos com e sem imagem.
-- Buscar um produto pelo seu ID único.
-
-##### Importação de produtos de uma API externa
-
-É necessário que o sistema seja capaz de importar produtos que estão em um outro serviço. Deverá ser criado um comando que buscará produtos nessa API e armazenará os resultados para a sua base de dados. 
-
-Sugestão: `php artisan products:import`
-
-Esse comando deverá ter uma opção de importar um único produto da API externa, que será encontrado através de um ID externo.
-
-Sugestão: `php artisan products:import --id=123`
-
-Utilize a seguinte API para importar os produtos: [https://fakestoreapi.com/docs](https://fakestoreapi.com/docs)
-
----
-
-Se houver dúvidas, por favor, abra uma issue nesse repositório.
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

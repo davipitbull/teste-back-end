@@ -53,6 +53,25 @@ Para começar, siga os passos abaixo:
      php artisan products:import --id=1
      ```
 
+ ## Servidor Web e Banco de Dados
+
+Para executar a aplicação localmente, você precisará de um servidor web e um servidor de banco de dados. Recomendamos a utilização do XAMPP, que é uma solução fácil de instalar e configurar, incluindo o Apache (servidor web) e o MySQL (servidor de banco de dados).
+
+Você pode baixar e instalar o XAMPP a partir do seguinte link: [https://www.apachefriends.org/index.html](https://www.apachefriends.org/index.html)
+
+Após instalar o XAMPP, inicie os serviços do Apache e MySQL pelo painel de controle do XAMPP antes de executar a aplicação Laravel.
+
+## Execução da Aplicação
+
+Para executar a aplicação localmente, você pode utilizar o comando `php artisan serve` no terminal:
+
+```bash
+php artisan serve
+```
+
+Este comando iniciará um servidor de desenvolvimento embutido, permitindo que você acesse a aplicação através do URL padrão http://127.0.0.1:8000.
+
+
 ## Rotas Disponíveis
 
 A aplicação oferece as seguintes rotas para interação:

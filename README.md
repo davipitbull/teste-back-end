@@ -1,66 +1,80 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Teste Back-End
 
-## About Laravel
+Olá,
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Agradeço sinceramente pela oportunidade de participar deste processo seletivo.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Este repositório contém uma aplicação desenvolvida com Laravel na versão 10, que consiste em uma REST API para gerenciamento de produtos. Não há nenhuma interface de usuário incluída; portanto, todas as interações com a aplicação são feitas por meio de solicitações HTTP.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Para começar, siga os passos abaixo:
 
-## Learning Laravel
+## Passos para Configuração
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+1. **Clonagem do Repositório:**
+   - Clone este repositório em sua máquina local:
+     ```bash
+     git clone https://github.com/davipitbull/teste-back-end.git
+     ```
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+2. **Instalação de Dependências:**
+   - Navegue até o diretório do projeto clonado e execute o comando:
+     ```bash
+     composer install
+     ```
+     Este comando instalará todas as dependências do Laravel necessárias para o projeto.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+3. **Configuração do Banco de Dados:**
+   - Renomeie o arquivo `.env.example` para `.env`.
+   - Abra o arquivo `.env` em um editor de texto.
+   - Preencha as informações de conexão do banco de dados, como nome do banco, usuário, senha, etc.
+   - Salve e feche o arquivo.
 
-## Laravel Sponsors
+4. **Geração da Chave da Aplicação:**
+   - Gere uma chave única para a aplicação Laravel:
+     ```bash
+     php artisan key:generate
+     ```
+     Este comando irá gerar uma chave aleatória e atribuí-la à variável `APP_KEY` no arquivo `.env`.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+5. **Execução das Migrações:**
+   - Execute as migrações para criar a estrutura do banco de dados:
+     ```bash
+     php artisan migrate
+     ```
 
-### Premium Partners
+6. **Importação de Dados (Opcional):**
+   - Se desejar, você pode importar dados de uma API externa para preencher o banco de dados:
+     ```bash
+     php artisan products:import
+     ```
+   - Se preferir importar apenas um produto específico, você pode fornecer o ID do produto:
+     ```bash
+     php artisan products:import --id=1
+     ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+## Rotas Disponíveis
 
-## Contributing
+A aplicação oferece as seguintes rotas para interação:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- `GET /api/produtos`: Retorna todos os produtos.
+- `POST /api/produtos`: Cria um novo produto.
+- `PUT /api/produtos/{id}`: Atualiza um produto existente.
+- `DELETE /api/produtos/{id}`: Remove um produto.
+- `POST /api/produtos/search/name-and-category`: Busca produtos por nome e categoria.
+- `POST /api/produtos/search/category`: Busca produtos por categoria.
+- `POST /api/produtos/search/image`: Filtra produtos com ou sem imagem.
+- `GET /api/produtos/{id}`: Retorna um produto específico pelo ID.
 
-## Code of Conduct
+## Ferramenta Recomendada para Testes
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Recomendamos o uso do Postman para testar as funcionalidades da API. Você pode importar a coleção de requisições fornecida no arquivo `test-backend.postman_collection.json` para começar a interagir com a API.
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Agradeço novamente pela oportunidade de participar deste processo seletivo. Estou à disposição para qualquer esclarecimento adicional.
 
-## License
+Atenciosamente,
+David Rodrigues De Souza Junior
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+

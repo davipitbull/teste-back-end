@@ -23,6 +23,7 @@ Para começar, siga os passos abaixo:
      composer install
      ```
      Este comando instalará todas as dependências do Laravel necessárias para o projeto.
+     Se você não tiver o Composer instalado, instale-o no link a seguir: [https://getcomposer.org](https://getcomposer.org)
 
 3. **Configuração do Banco de Dados:**
    - Renomeie o arquivo `.env.example` para `.env`.
